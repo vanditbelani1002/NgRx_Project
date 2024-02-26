@@ -1,0 +1,21 @@
+input,button{
+    /* margin: 2px; */
+    width: 400px;
+    border: 1px solid gray;
+}
+mat-form-field{
+    width: 50%;
+}
+
+/* input.ng-touched.ng-invalid{
+    border-left: 3px solid red;
+} */
+small{
+    color: red;
+}
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+

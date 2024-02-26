@@ -1,0 +1,75 @@
+<h1 style="text-align: center;">Welcome to Home Page</h1>
+<div align="center">
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" #datepicker formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <h1 #showdate></h1>
+    <div>
+        <button mat-raised-button color="primary" type="submit">Get Selected Date</button>
+    </div>
+    </form>
+    <!-- <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef > No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        <ng-container matColumnDef="position2">
+          <th mat-header-cell *matHeaderCellDef  >No.</th>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]=""> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+          <ng-container matColumnDef="header2">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="4">Second group</th>
+          </ng-container>
+          <ng-container matColumnDef="header3">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Third group</th>
+          </ng-container>
+          <ng-container matColumnDef="header4">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="1">fourth group</th>
+          </ng-container>
+          <ng-container matColumnDef="header5">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="3   ">fifth group</th>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['header5']"></tr>
+          <tr mat-header-row *matHeaderRowDef="['position2', 'header3','header4']"></tr>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-header-row *matHeaderRowDef="['header2']"></tr> 
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-header-row *matHeaderRowDef="['position2', 'header2']"></tr>
+      </table> -->
+      
+      
+      <mat-card class="card">
+        <mat-card-title>Get A Full name Using ViewChild</mat-card-title>
+        <mat-card-content class="content">      
+          <mat-form-field>
+            <input type="text" matInput placeholder="First Name" #inputEl>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Middle Name" #inputEl>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Last Name" #inputEl>
+          </mat-form-field>
+          <button mat-raised-button (click)="getName()">Get Full Name</button>
+        </mat-card-content>
+        <mat-card-footer>
+          <h1>{{fullname}}</h1>
+        </mat-card-footer>
+      </mat-card>
+    </div>

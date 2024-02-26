@@ -1,0 +1,15 @@
+<div>
+    <form>
+        <mat-form-field>
+            <mat-label>User Name</mat-label>
+            <input matInput #username>
+          </mat-form-field>
+          <!-- <mat-error *ngIf="reactiveform.get('name')?.touched && reactiveform.get('name')?.invalid">Name is Required</mat-error> -->
+        <mat-form-field>
+            <mat-label>Passowrd</mat-label>
+            <input matInput type="password" #password>
+          </mat-form-field>
+          <!-- <mat-error *ngIf="reactiveform.get('password')?.errors?.['minlength']">Password must be contain 8 character</mat-error> -->
+        <button mat-raised-button color="primary" type="submit" (click)="onLogin()">Submit</button>
+    </form>
+</div>

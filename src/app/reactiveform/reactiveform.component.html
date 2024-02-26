@@ -1,0 +1,21 @@
+<div style="margin: 10px;">
+    <form [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+          <mat-error *ngIf="reactiveform.get('name')?.touched && reactiveform.get('name')?.invalid">Name is Required</mat-error>
+        <mat-form-field appearance="outline">
+            <mat-label>Passowrd</mat-label>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
+          <mat-error *ngIf="reactiveform.get('password')?.errors?.['minlength']">Password must be contain 8 character</mat-error>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput  formControlName="email">
+          </mat-form-field>
+          <mat-error *ngIf="reactiveform.get('email')?.errors?.['email']">Please Enter Valid Email</mat-error> 
+        <!-- <input type="file" name="" id="" (change)="onChangeFile($event)"> --> 
+        <button mat-raised-button color="primary" type="submit" [disabled]="reactiveform.invalid">Submit</button>
+    </form>
+</div>

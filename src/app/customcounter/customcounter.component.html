@@ -1,0 +1,22 @@
+<h3>Hello Welcome {{name}}</h3>
+<div>
+    <mat-form-field class="example-full-width">
+        <mat-label>Counter Input</mat-label>
+        <input matInput  [(ngModel)]="counterinput">
+      </mat-form-field>
+    <!-- <label >Counter Input:</label>
+    <input  style="margin: 1rem;" [(ngModel)]="counterinput"> <br> -->
+    <mat-form-field>
+        <mat-label>Action Type</mat-label>
+        <mat-select [(ngModel)]="actiontype">
+            <mat-option value="add">Add</mat-option>
+            <mat-option value="remove">Remove</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <!-- <label >Action type</label>
+    <select name="" id="" style="margin: 1rem;" [(ngModel)]="actiontype">
+        <option value="add">Add</option>
+        <option value="remove">Remove</option> 
+    </select> <br> -->
+    <button mat-raised-button (click)="onCustomincrement()" [disabled]="!counterinput">Proceed</button>
+</div>

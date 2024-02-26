@@ -1,0 +1,19 @@
+<mat-toolbar class="navbar">
+<nav>
+  <a  routerLink="">Home</a>
+  <a  routerLink="counter">Counter</a>
+  <a  routerLink="/blog">Blog</a>
+  <a  routerLink="/form">Form</a>
+  <a  routerLink="/posts">Posts</a>
+</nav>
+  <div>
+    <a routerLink="/login" mat-stroked-button *ngIf="!login">Log in</a>
+    <a routerLink="/signup"  *ngIf="!login" mat-button>Sign Up</a>
+    <a routerLink="/login" [queryParams]="{logout:true}" *ngIf="login" mat-button>Log out</a>
+  </div>
+</mat-toolbar>
+<router-outlet />
+
+
+
+

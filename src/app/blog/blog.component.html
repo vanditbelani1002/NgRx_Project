@@ -1,0 +1,62 @@
+<div style="text-align: center;" *ngIf="!bloginfo.Errormessage">
+    <h1>Technology Blog</h1>
+    <button (click)="addBlog()" style="margin-bottom: 5px;" mat-raised-button color="primary">Add Blog</button>
+    <form action="" *ngIf="show" [formGroup]="blogform" (ngSubmit)="saveBlog()">
+        <mat-form-field class="input-field">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
+        <!-- <input type="text" > -->
+        <mat-form-field class="input-field">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+        <!-- <textarea name="" id="" cols="30" rows="10" ></textarea> -->
+        <button (click)="saveBlog()" type="button" style="margin-bottom: 5px;" mat-raised-button color="primary" id="add" *ngIf="isadd">Add</button>
+        <button (click)="updateBlog()" type="button" style="margin-bottom: 5px;" mat-raised-button color="primary" id="edit" *ngIf="!isadd">Edit</button>
+        <button (click)="close()" style="margin-bottom: 5px;" mat-raised-button color="warn">Close</button>
+    </form>
+</div>
+    <table mat-table [dataSource]="dataSource" class="demo-table" multiTemplateDataRows matSort (matSortChange)="announceSortChange($event)" matSortActive="id" matSortDirection="asc">
+        <ng-container matColumnDef="header">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="6">Total Blogs:{{blogsnumber}}</th>
+          </ng-container>
+        <ng-container matColumnDef="id" >
+            <th  mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <th  mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="editBlog(element.id)">
+                <mat-icon>edit</mat-icon>
+              </button> </td>
+          </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" (click)="removeBlog(element.id)">
+                <mat-icon>delete</mat-icon>
+              </button> </td>
+          </ng-container>
+        <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element"> <button mat-mini-fab color="basic" routerLink="/blog/{{element.id}}" (click)="viewBlog(element.id)">
+                <mat-icon>visibility</mat-icon>
+            </button> </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="['header']"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div *ngIf="bloginfo.Errormessage" align="center">
+        <div>Error Occured</div>
+    <p style="color: red;">{{bloginfo.Errormessage}}</p>
+    </div>
+    

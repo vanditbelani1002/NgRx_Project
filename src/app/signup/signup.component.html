@@ -1,0 +1,21 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput  formControlName="name">
+          </mat-form-field>
+        <mat-form-field>
+            <mat-label>User Name</mat-label>
+            <input matInput  formControlName="username">
+          </mat-form-field>
+        <mat-form-field>
+            <mat-label>Passowrd</mat-label>
+            <input matInput type="password"  formControlName="password">
+          </mat-form-field> 
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password"  formControlName="cpassword">
+          </mat-form-field> 
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Sign Up</button>
+    </form>
+</div>

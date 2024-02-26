@@ -1,0 +1,16 @@
+div{
+    margin: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input,button{
+    margin: 2px;
+    /* width: 300px; */
+    border: 1px solid gray;
+}
+mat-form-field{
+    width: 50%;
+}

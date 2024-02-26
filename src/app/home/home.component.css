@@ -1,0 +1,10 @@
+form{
+    margin-bottom: 10px;
+}
+.card{
+    width: 50%;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
