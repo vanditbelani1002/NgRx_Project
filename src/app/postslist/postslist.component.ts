@@ -15,25 +15,6 @@ import {MatTableModule} from '@angular/material/table';
 export class PostslistComponent implements OnInit {
   data$!: Observable<Post[]>
   posts: Post[]=[]
-  arr = [
-    {
-      id:1,
-      name:"ABC"
-    },
-    {
-      id:2,
-      name:"ABC"
-    },
-    {
-      id:3,
-      name:"ABC"
-    },
-    {
-      id:4,
-      name:"ABC"
-    },
-  ]
-
   constructor(private Postservice:PostService){}
   dataSource = this.posts;
   displayedColumns: string[] = ['title','description'];

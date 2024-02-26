@@ -33,7 +33,6 @@
       // console.log(formData);
       
       // console.log(this.password);
-      // console.log(this.password.charAt(0) ===  this.password.charAt(0).toUpperCase() && this.password.charAt(1) ===  this.password.charAt(1).toUpperCase() && this.password.charAt(2) ===  this.password.charAt(2).toUpperCase());
       console.log(this.reactiveform);
       this.isSubmitted=true
     }

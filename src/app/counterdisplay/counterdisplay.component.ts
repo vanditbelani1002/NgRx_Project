@@ -20,8 +20,7 @@ export class CounterdisplayComponent implements OnInit{
 
 counterDisplay!: number
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
     this.store.select(getcounter).subscribe(data=>{
       this.counterDisplay=data;
       console.log("Counter Display");

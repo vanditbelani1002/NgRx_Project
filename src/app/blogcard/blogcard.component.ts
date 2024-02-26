@@ -32,7 +32,6 @@ export class BlogcardComponent implements OnInit{
       this.blog=item.find((blog)=>blog.id==this.blogid);
       // console.log(this.blog); 
     })
-    
   }
   goBack(){
     // console.log("Go Back");

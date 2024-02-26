@@ -17,10 +17,8 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CounterbuttonComponent {
  constructor(private store:Store<{counter:counterModel}>){}
-
     onIncrement(){
-      this.store.dispatch(increment())
-      
+      this.store.dispatch(increment())  
       
     }
     onDecrement(){
